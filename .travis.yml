@@ -1,0 +1,14 @@
+# Travis.ci file https://docs.travis-ci.com/user/tutorial/
+# Continous integration
+
+# Login to https://travis-ci.org/ using your github credentials
+# Add this repository to travis
+# Every time there is a commit, this script will be run and result emailed
+
+language: cpp
+
+script:
+    - cmake CMakeLists.txt
+    - make
+    - ./assert_example
+
