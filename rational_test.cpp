@@ -19,6 +19,7 @@ void testRationalConstructor() {
   Rational r3(3);
   Rational r35(3, 5);
   Rational r3050(30, 50);
+  Rational r3050copy(r3050);
   assert(rempty.getNumerator() == 0);
   assert(rempty.getDenominator() == 1);
   assert(r3.getNumerator() == 3);
@@ -27,6 +28,8 @@ void testRationalConstructor() {
   assert(r35.getDenominator() == 5);
   assert(r3050.getNumerator() == 3);
   assert(r3050.getDenominator() == 5);
+  assert(r3050copy.getNumerator() == 3);
+  assert(r3050copy.getDenominator() == 5);
 }
 
 // Testing vectors << and >> operators

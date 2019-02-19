@@ -58,6 +58,9 @@ class Rational {
   // Default constructor with default values for parameters
   explicit Rational(int numerator = 0, int denominator = 1);
 
+  // copy constructor
+  Rational(const Rational &other);
+
   // get numerator
   int getNumerator() const;
 
@@ -112,6 +115,9 @@ class Rational {
 
   // Modify divide /=
   Rational &operator/=(const Rational &);
+
+  // assignment
+  Rational &operator=(const Rational &other);
 
  private:
   // Numerator of fraction

@@ -40,6 +40,13 @@ Rational::Rational(int numerator, int denominator) {
   reduce();
 }
 
+// copy constructor
+Rational::Rational(const Rational &other) :
+    numerator{other.numerator}, denominator{other.denominator} {
+  cout << "Creating rational using copy constructor with " << numerator
+       << " and " << denominator << endl;
+}
+
 // get numerator
 int Rational::getNumerator() const {
   return numerator;
@@ -158,6 +165,16 @@ Rational &Rational::operator/=(const Rational &a) {
   return *this;
 }
 
+// assignment
+Rational &Rational::operator=(const Rational &other) {
+  // check for self assignment
+  if (this != &other) {
+    numerator = other.numerator;
+    denominator = other.denominator;
+  }
+  return *this;
+}
+
 /**
  *
  * overloaded <<: prints "DIVIDE BY ZERO ERROR!!!" if denominator is zero,
@@ -187,7 +204,6 @@ istream &operator>>(istream &input, Rational &rat) {
 
   return input;
 }
-
 
 // reduce fraction to lowest terms
 void Rational::reduce() {
